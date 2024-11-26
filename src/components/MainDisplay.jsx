@@ -29,23 +29,27 @@ function MainDisplay() {
     navigate(`/event/${events[currentIndex].id}`);
   };
 
+  const handleEventsClick = () => {
+    navigate(`/events`);
+  };
+
   return (
     <main className="main-display">
       <div className="section-title">
         <div className="title-line"></div>
-        <div className="title-text">Events</div>
+        <div className="title-text" onClick={handleEventsClick}>Events</div>
         <div className="title-line"></div>
       </div>
 
       <div className="event-section">
-        <button className="nav-arrow left" onClick={handlePrev}>←</button>
+       
         <div onClick={handleEventClick}>
           <EventCard 
             event={events[currentIndex]} 
             slideDirection={slideDirection}
           />
         </div>
-        <button className="nav-arrow right" onClick={handleNext}>→</button>
+        
       </div>
 
       <button className="new-event-button">

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import MainDisplay from "./components/MainDisplay";
 import EventDetails from "./components/EventDetails";
 import GroceryListPage from "./components/event/GroceryListPage";
+import EventsPage from "./components/EventsPage.jsx"; // You'll need to create this component
 import events from "./data/events";
 import "./App.css";
 
@@ -46,6 +47,14 @@ function App() {
               <GroceryListPage 
                 events={eventsData}
                 onToggleGroceryItem={handleToggleGroceryItem}
+              />
+            } 
+          />
+          <Route 
+            path="/events" 
+            element={
+              <EventsPage 
+                events={eventsData}
               />
             } 
           />
